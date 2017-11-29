@@ -62,7 +62,7 @@ while not globals.isGameFinished:
 
     # Minigame 5 tekenen
     # Teken hier minigame 5
-    print(globals.gameState[1])
+    # print(globals.gameState[1])
 
     pygame.display.flip()
 

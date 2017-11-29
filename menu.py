@@ -21,8 +21,6 @@ buttonWidth = 219
 buttonX = [10, 10, 10, 600, 600]
 buttonY = [200, 350, 500, 200, 350]
 
-
-
 def menuDraw():
     globals.screen.blit(menuBackground, (0, 0))
     globals.screen.blit(menuMG_Button1, (10, 200))
