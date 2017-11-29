@@ -5,6 +5,7 @@
 # Libraries importeren
 import pygame
 import globals
+import functions
 import menu
 import minigame1
 import minigame2
@@ -26,6 +27,8 @@ while not globals.isGameFinished:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 globals.isGameFinished = True
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            menu.menuDetectButtonClick()
 
     # if globals.gameState[0]:  # Menu
         # menu.menuMainLoop()
@@ -42,9 +45,8 @@ while not globals.isGameFinished:
 
     globals.screen.fill(globals.BLACK)
 
-
     # Menu tekenen
-    # menu.menuDraw()
+    menu.menuDraw()
 
     # Minigame 1 tekenen
     # Teken hier minigame 1
@@ -60,7 +62,7 @@ while not globals.isGameFinished:
 
     # Minigame 5 tekenen
     # Teken hier minigame 5
-
+    print(globals.gameState[1])
 
     pygame.display.flip()
 
