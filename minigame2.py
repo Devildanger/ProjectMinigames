@@ -11,4 +11,4 @@ import globals
 
 
 # Minigame
-def Picknckbeer(hier alles in gooien en beeldscherm pygame init hoeft er niet bij):
+def Picknickbeer(): # hier alles in gooien en beeldscherm pygame init hoeft er niet bij
