@@ -21,6 +21,7 @@ buttonWidth = 219
 buttonX = [10, 10, 10, 600, 600]
 buttonY = [200, 350, 500, 200, 350]
 
+
 def menuDraw():
     globals.screen.blit(menuBackground, (0, 0))
     globals.screen.blit(menuMG_Button1, (10, 200))
@@ -33,7 +34,7 @@ def menuDraw():
 def menuDetectButtonClick(): # Kijkt of er met de muis op een knop wordt gedrukt
     mouseX, mouseY = pygame.mouse.get_pos()
     for i in range(0, totalButtons):
-        if mouseX > buttonX[i] and mouseX < (buttonX[i] - buttonWidth) and mouseY > buttonY[i] and mouseY < (buttonY[i] - buttonHeight):
-            functions.switchGameState(i)
+        if mouseX >= buttonX[i] and (mouseX <= buttonX[i] + buttonWidth) and mouseY >= buttonY[i] and (mouseY <= buttonY[i] + buttonHeight):
+            functions.switchGameState(i+1)
 
 # def menuMainLoop():

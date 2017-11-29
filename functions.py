@@ -8,6 +8,6 @@ import globals
 
 
 def switchGameState(state):
-    for i in (len(globals.gameState)):
+    for i in range(len(globals.gameState)):
         globals.gameState[i] = False
-    globals.GameState[state] = True
+    globals.gameState[state] = True
