@@ -1,13 +1,13 @@
-# BESTAND: minigame1.py
-# Minigame 1: Honing
-# AUTEUR: Danne van Zuijlen
+#BESTAND: minigame1.py
+#Minigame 1: Honing
+#AUTEUR: Danne van Zuijlen
 
-# Libraries importeren
+#Libraries importeren
 import pygame
 import globals
 
 
-# Globale variabelen
+#Globale variabelen
 
 
-# Minigame
+#Minigame

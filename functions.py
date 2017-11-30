@@ -1,8 +1,8 @@
-# BESTAND: functions.py
-# Globale functies
-# AUTEUR: Remco de Zeeuw
+#BESTAND: functions.py
+#Globale functies
+#AUTEUR: Remco de Zeeuw
 
-# Libraries importeren
+#Libraries importeren
 import pygame
 import globals
 

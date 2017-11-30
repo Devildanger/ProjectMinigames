@@ -1,14 +1,14 @@
-# BESTAND: minigame2.py
-# Minigame 2: Picknickbeer
-# AUTEUR: Danny Zoetmulder
+#BESTAND: minigame2.py
+#Minigame 2: Picknickbeer
+#AUTEUR: Danny Zoetmulder
 
-# Libraries importeren
+#Libraries importeren
 import pygame
 import globals
 
 
-# Globale variabelen
+#Globale variabelen
 
 
-# Minigame
-# def Picknickbeer(): # hier alles in gooien en beeldscherm pygame init hoeft er niet bij
+#Minigame
+#def Picknickbeer(): hier alles in gooien en beeldscherm pygame init hoeft er niet bij

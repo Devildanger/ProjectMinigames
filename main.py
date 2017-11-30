@@ -1,8 +1,8 @@
-# BESTAND: main.py
-# Hoofdbestand
-# AUTEUR: Remco de Zeeuw
+#BESTAND: main.py
+#Hoofdbestand
+#AUTEUR: Remco de Zeeuw
 
-# Libraries importeren
+#Libraries importeren
 import pygame
 import globals
 import functions
@@ -13,13 +13,13 @@ import minigame3
 import minigame4
 import minigame5
 
-# PyGame initialiseren
+#PyGame initialiseren
 pygame.init()
 
-# Clock aanmaken
+#Clock aanmaken
 clock = pygame.time.Clock()
 
-# Main loop
+#Main loop
 while not globals.isGameFinished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -45,7 +45,7 @@ while not globals.isGameFinished:
 
     globals.screen.fill(globals.BLACK)
 
-    # Menu tekenen
+    #Menu tekenen
     menu.menuDraw()
 
     # Minigame 1 tekenen
@@ -68,5 +68,5 @@ while not globals.isGameFinished:
 
     clock.tick(globals.FPS)
 
-# Afsluiten
+#Afsluiten
 pygame.quit()

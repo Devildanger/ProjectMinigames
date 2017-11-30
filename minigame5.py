@@ -1,13 +1,13 @@
-# BESTAND: minigame5.py
-# Minigame 5: Visbeer
-# AUTEUR: Liam de Waal
+#BESTAND: minigame5.py
+#Minigame 5: Visbeer
+#AUTEUR: Liam de Waal
 
-# Libraries importeren
+#Libraries importeren
 import pygame
 import globals
 
 
-# Globale variabelen
+#Globale variabelen
 
 
-# Minigame
+#Minigame

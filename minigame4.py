@@ -1,13 +1,13 @@
-# BESTAMD: minigame4.py
-# Minigame 4: Herten jagen
-# AUTEUR: Remco de Zeeuw
+#BESTAMD: minigame4.py
+#Minigame 4: Herten jagen
+#AUTEUR: Remco de Zeeuw
 
-# Libraries importeren
+#Libraries importeren
 import pygame
 import globals
 
 
-# Globale variabelen
+#Globale variabelen
 
 
-# Minigame
+#Minigame
