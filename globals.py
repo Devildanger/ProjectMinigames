@@ -5,6 +5,9 @@
 #Libraries importeren
 import pygame
 
+#Game titel
+gameTitle = "Dineerbeer"
+
 #Resolutie
 screenWidth = 800
 screenHeight = 600

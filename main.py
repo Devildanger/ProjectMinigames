@@ -13,9 +13,13 @@ import minigame3
 import minigame4
 import minigame5
 
-#PyGame en fonts initialiseren
+#Initialisatie
 pygame.init()
 pygame.font.init()
+
+#Display-attributen invullen
+pygame.display.set_caption(globals.gameTitle)
+#Icoon toevoegen met pygame.display.set_icon
 
 #Clock aanmaken
 clock = pygame.time.Clock()
