@@ -13,8 +13,9 @@ import minigame3
 import minigame4
 import minigame5
 
-#PyGame initialiseren
+#PyGame en fonts initialiseren
 pygame.init()
+pygame.font.init()
 
 #Clock aanmaken
 clock = pygame.time.Clock()
@@ -47,6 +48,7 @@ while not globals.isGameFinished:
 
     #Menu tekenen
     menu.menuDraw()
+    functions.drawText("Dit is een test", "data/fonts/RAVIE.ttf", 48, globals.WHITE, (100, 100))
 
     # Minigame 1 tekenen
     # Teken hier minigame 1
@@ -62,7 +64,6 @@ while not globals.isGameFinished:
 
     # Minigame 5 tekenen
     # Teken hier minigame 5
-    print(globals.gameState[1])
 
     pygame.display.flip()
 
