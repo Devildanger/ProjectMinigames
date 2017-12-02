@@ -13,6 +13,11 @@ import minigame3
 import minigame4
 import minigame5
 
+#Globale variabelen
+isGameFinished = False
+quitToMenuProc = False
+quitToStartProc = False
+
 #Initialisatie
 pygame.init()
 pygame.font.init()
@@ -25,15 +30,35 @@ pygame.display.set_caption(globals.gameTitle)
 clock = pygame.time.Clock()
 
 #Main loop
-while not globals.isGameFinished:
+while not isGameFinished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            globals.isGameFinished = True
+            isGameFinished = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                globals.isGameFinished = True
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            menu.menuDetectButtonClick()
+                if functions.checkIfGameStatesAreFalse():
+                    isGameFinished = True
+                elif globals.gameState[0]:
+                    quitToStartProc = True
+                else:
+                    quitToMenuProc = True
+            if event.key == pygame.K_j:
+                if quitToMenuProc:
+                    quitToMenuProc = False
+                    functions.setGameState(0)
+                elif quitToStartProc:
+                    quitToStartProc = False
+                    functions.setAllGameStatesToFalse()
+            if event.key == pygame.K_n:
+                if quitToMenuProc:
+                    quitToMenuProc = False
+                elif quitToStartProc:
+                    quitToStartProc = False
+            if event.key == pygame.K_RETURN:
+                if functions.checkIfGameStatesAreFalse():
+                    functions.setGameState(0)
+
+    menu.mainLoop(menu.quitMenu, menu.quitMenuProc)
 
     # if globals.gameState[0]:  # Menu
         # menu.menuMainLoop()
@@ -48,11 +73,16 @@ while not globals.isGameFinished:
     # elif globals.gameState[5]:
         # Voer hier minigame 5 uit
 
+    #Alles tekenen
     globals.screen.fill(globals.BLACK)
 
-    #Menu tekenen
-    menu.menuDraw()
-    functions.drawText("Dit is een test", "data/fonts/RAVIE.ttf", 48, globals.WHITE, (100, 100))
+    if functions.checkIfGameStatesAreFalse(): #Startscherm
+        functions.drawText("Dineerbeer!", "data/fonts/RAVIE.ttf", 72, globals.BLUE, (130, 200))
+        functions.drawText("Druk op ENTER om te beginnen", "data/fonts/RAVIE.ttf", 18, globals.GREEN, (210, 400))
+        functions.drawText("Druk op ESCAPE om af te sluiten", "data/fonts/RAVIE.ttf", 18, globals.RED, (200, 500))
+
+    elif globals.gameState[0]: #Menu
+        menu.draw()
 
     # Minigame 1 tekenen
     # Teken hier minigame 1
@@ -68,6 +98,14 @@ while not globals.isGameFinished:
 
     # Minigame 5 tekenen
     # Teken hier minigame 5
+
+    if quitToStartProc:
+        functions.drawText("Weet u zeker dat u wilt stoppen? J/N", "data/fonts/RAVIE.ttf", 36, globals.RED,
+                           (globals.screenWidth / 2, globals.screenHeight / 2))
+
+    elif quitToMenuProc:
+        functions.drawText("Weet u zeker dat u terug wilt naar het hoofdmenu? J/N", "data/fonts/RAVIE.ttf", 36,
+                           globals.RED, (globals.screenWidth / 2, globals.screenHeight / 2))
 
     pygame.display.flip()
 
