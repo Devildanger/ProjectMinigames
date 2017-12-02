@@ -100,12 +100,12 @@ while not isGameFinished:
     # Teken hier minigame 5
 
     if quitToStartProc:
-        functions.drawText("Weet u zeker dat u wilt stoppen? J/N", "data/fonts/RAVIE.ttf", 36, globals.RED,
-                           (globals.screenWidth / 2, globals.screenHeight / 2))
+        functions.drawText("Weet u zeker dat u wilt stoppen? J/N", "data/fonts/RAVIE.ttf", 18, globals.RED,
+                           (150, globals.screenHeight / 2))
 
     elif quitToMenuProc:
-        functions.drawText("Weet u zeker dat u terug wilt naar het hoofdmenu? J/N", "data/fonts/RAVIE.ttf", 36,
-                           globals.RED, (globals.screenWidth / 2, globals.screenHeight / 2))
+        functions.drawText("Weet u zeker dat u terug wilt naar het hoofdmenu? J/N", "data/fonts/RAVIE.ttf", 18,
+                           globals.RED, (150, globals.screenHeight / 2))
 
     pygame.display.flip()
 
