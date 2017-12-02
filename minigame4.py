@@ -11,10 +11,18 @@ import functions
 #Globale variabelen
 isGameOver = False
 
-#Minigame
-def minigame4():
+
+
+#Minigame tekenen
+#def draw():
+
+
+
+
+#Main loop
+def mainLoop():
     while not isGameOver:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    functions.showMessage
+                    functions.drawText(globals.backToMenuMessage, "data/fonts/RAVIE.ttf", 18, globals.RED, (100, globals.screenHeight/2))

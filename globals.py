@@ -35,4 +35,8 @@ PINK = (255, 105, 180)
 #Game loop variabelen
 gameState = [False, False, False, False, False]  # 0 = Menu, 1 = MG1, 2 = MG2, 3 = MG3, 4 = MG4, 5 = MG5
 
+#Standaard-zinnen
+backToMenuMessage = "Weet u zeker dat u terug wilt naar het menu? J/N"
+backToStartMessage = "Weet u zeker dat u wilt stoppen? J/N"
+
 #Gedeelde sprites (sprites die in meerdere minigames gebruikt worden, dit voorkomt dat ze meerdere keren geladen moeten worden)

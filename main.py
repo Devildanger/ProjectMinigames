@@ -57,6 +57,8 @@ while not isGameFinished:
             if event.key == pygame.K_RETURN:
                 if functions.checkIfGameStatesAreFalse():
                     functions.setGameState(0)
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            menu.detectButtonClick()
 
     menu.mainLoop(menu.quitMenu, menu.quitMenuProc)
 
@@ -100,13 +102,15 @@ while not isGameFinished:
     # Teken hier minigame 5
 
     if quitToStartProc:
-        functions.drawText("Weet u zeker dat u wilt stoppen? J/N", "data/fonts/RAVIE.ttf", 18, globals.RED,
+        functions.drawText(globals.backToStartMessage, "data/fonts/RAVIE.ttf", 18, globals.RED,
                            (150, globals.screenHeight / 2))
 
     elif quitToMenuProc:
-        functions.drawText("Weet u zeker dat u terug wilt naar het hoofdmenu? J/N", "data/fonts/RAVIE.ttf", 18,
+        functions.drawText(globals.backToMenuMessage, "data/fonts/RAVIE.ttf", 18,
                            globals.RED, (150, globals.screenHeight / 2))
 
+
+    print(globals.gameState[1])
     pygame.display.flip()
 
     clock.tick(globals.FPS)
