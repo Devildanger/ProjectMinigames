@@ -1,20 +1,21 @@
 #BESTAND: minigame3.py
 #Minigame 3: Bessen
-#AUTEUR: Loek
+#AUTEUR: Loek v/d Berg
 
 #Libraries importeren
 import pygame
-import sys
-pygame.init()
+import os, sys
 from pygame.locals import *
+pygame.init()
 
+#Globale waarden
 White = (255,255,255)
 Black = (0,0,0)
-#clock = pygame.time.clock()
 
 
-gameDisplay = pygame.display.set_mode ((1032,860))
-pygame.display.set_caption("Dineerbeer")
+
+gameDisplay = pygame.display.set_mode ((1024,768))
+pygame.display.set_caption("Bessenbeer")
 
 class Background(pygame.sprite.Sprite):
     def __init__(self, image_file, location):
@@ -31,10 +32,10 @@ class Berry(pygame.sprite.Sprite):
         self.rect.left, self.rect.top = location
 
 
-#pygame.draw.rect()
+
 gameExit = False
-Background = Background("Background.JPG", (0,0))
-Berry = Berry("berry.jpg", (480,230))
+Background = Background("data/backgrounds/Minigame 3 Loek/Background3.PNG", (0,0))
+Berry = Berry("data/sprites/Minigame 3 Loek/berry.jpg", (480,230))
 
 
 
