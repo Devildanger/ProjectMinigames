@@ -9,45 +9,24 @@ from pygame.locals import *
 pygame.init()
 
 #Globale waarden
-White = (255,255,255)
-Black = (0,0,0)
+screenWidth = 1024
+screenHeight = 768
 
 
-
-gameDisplay = pygame.display.set_mode ((1024,768))
+screen = pygame.display.set_mode ((screenWidth,screenHeight))
 pygame.display.set_caption("Bessenbeer")
 
-class Background(pygame.sprite.Sprite):
-    def __init__(self, image_file, location):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load(image_file)
-        self.rect = self.image.get_rect()
-        self.rect.left, self.rect.top = location
-
-class Berry(pygame.sprite.Sprite):
-    def __init__(self, image_file, location):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load(image_file)
-        self.rect = self.image.get_rect()
-        self.rect.left, self.rect.top = location
+BG = pygame.image.load ("data/backgrounds/Minigame 3 Loek/Background3.png")
+Bear = 
 
 
 
-gameExit = False
-Background = Background("data/backgrounds/Minigame 3 Loek/Background3.PNG", (0,0))
-Berry = Berry("data/sprites/Minigame 3 Loek/berry.jpg", (480,230))
-
-
-
-
-    
-while not gameExit:
+Running = True
+while Running:
      for event in pygame.event.get():
         if event.type == pygame.QUIT:
-           gameExit = True
-     gameDisplay.fill([255, 255, 255])
-     gameDisplay.blit(Background.image, Background.rect)
-     gameDisplay.blit(Berry.image, Berry.rect)
+           Running = False
+     screen.blit (BG,(0,0))  
      pygame.display.update()
 
 
