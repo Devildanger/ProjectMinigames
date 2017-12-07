@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\data",
+    "\\data\\backgrounds",
+    "\\data\\backgrounds\\Minigame 3 Loek",
+    "\\data\\sprites",
+    "\\data\\sprites\\Minigame 3 Loek"
   ],
+  "SelectedNode": "\\minigame3.py",
   "PreviewInSolutionExplorer": false
 }
