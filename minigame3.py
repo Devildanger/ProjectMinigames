@@ -13,27 +13,44 @@ from pygame.locals import *
 pygame.init()
 
 #Globale waarden
+pygame.display.set_caption("Bessenbeer")
+White           = (255,255,255)
 screenWidth     = 1024
 screenHeight    = 768
 screen          = pygame.display.set_mode ((screenWidth,screenHeight))
 clock           = pygame.time.Clock()
-pygame.display.set_caption("Bessenbeer")
 
 
 #Images
-berry           = pygame.image.load("data/sprites/Minigame 3 Loek/berry.jpg")
 BG              = pygame.image.load("data/backgrounds/Minigame 3 Loek/Background3.png")
-BearIMG         = pygame.image.load("data/sprites/Minigame 3 Loek/bearright.jpg")
+#bearright       = pygame.image.load("data/sprites/Minigame 3 Loek/bearright.jpg")
+bearleft        = pygame.image.load("data/sprites/Minigame 3 Loek/bearleft.jpg")
+bearup          = pygame.image.load("data/sprites/Minigame 3 Loek/bearup.jpg")
+beardown        = pygame.image.load("data/sprites/Minigame 3 Loek/beardown.jpg")
+berry           = pygame.image.load("data/sprites/Minigame 3 Loek/berry.jpg")
+hunter          = pygame.image.load("data/sprites/Minigame 3 Loek/hunter3.jpg")
 
 
 
 
+#Functions
 
 
+    
+
+#Spawn bear
+
+bearright       = pygame.sprite.Sprite
+bearright.image = pygame.image.load("data/sprites/Minigame 3 Loek/bearright.jpg")
+bearright_x     = 75
+bearright_y     = 46
+bearright.rect  = pygame.Rect((bearright_x,bearright_y), bearright.image.get_size())
 
 
-def Bear (x,y):
-    screen.blit(BearIMG,(x,y))
+def BearRight (x,y):
+    screen.blit(bearright,(x,y))
+
+#Spawn de berries
 
 def spawn_berries():
     screen.blit(berry,(55,55))
@@ -163,14 +180,19 @@ def spawn_berries():
     screen.blit(berry,(945,560))
     screen.blit(berry,(945,635))
     screen.blit(berry,(945,685))
-def Gameloop():
-    bearx = 90
-    beary = 370
 
-    bearx_change = 0
-    beary_change = 0
-    Running = True
-    while Running:
+
+
+#gameloop
+def Gameloop():
+     bearx = 90
+     beary = 370
+     bearx_change = 0
+     beary_change = 0
+     allSprites      = pygame.sprite.Group.add(bearright)
+     Running = True
+     while Running:
+            clock.tick(60)
             screen.blit (BG,(0,0))
             spawn_berries()
             for event in pygame.event.get():
@@ -178,22 +200,28 @@ def Gameloop():
                   Running = False
                if event.type == pygame.KEYDOWN:
                    if event.key == pygame.K_LEFT:
+                       
                        bearx_change = -5           
                    elif event.key == pygame.K_RIGHT:
-                       bearx_change = 5
+                      
+                        bearx_change = 5
                    elif event.key == pygame.K_UP:
+                      
                        beary_change = -5
                    elif event.key == pygame.K_DOWN:
+                      
                        beary_change = 5
                if event.type == pygame.KEYUP:
                    if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT or event.key == pygame.K_UP or event.key == pygame.K_DOWN:
                       bearx_change = 0
                       beary_change = 0
-
+         
             bearx += bearx_change
             beary += beary_change
             
-            Bear(bearx,beary)
+            allSprites.draw(screen)
+            
+            BearRight(bearx,beary)
             pygame.display.update()
             clock.tick(60)
 
