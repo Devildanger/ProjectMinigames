@@ -40,7 +40,7 @@ hunter          = pygame.image.load("data/sprites/Minigame 3 Loek/hunter3.jpg")
 
 #Spawn bear
 
-bearright       = pygame.sprite.Sprite
+bearright       = pygame.sprite.Sprite()
 bearright.image = pygame.image.load("data/sprites/Minigame 3 Loek/bearright.jpg")
 bearright_x     = 75
 bearright_y     = 46
