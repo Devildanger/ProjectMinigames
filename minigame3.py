@@ -40,13 +40,16 @@ hunter          = pygame.image.load("data/sprites/Minigame 3 Loek/hunter3.jpg")
 
 #Spawn bear
 
+#################               NEW                 #########
 bearright       = pygame.sprite.Sprite()
 bearright.image = pygame.image.load("data/sprites/Minigame 3 Loek/bearright.jpg")
 bearright_x     = 75
 bearright_y     = 46
 bearright.rect  = pygame.Rect((bearright_x,bearright_y), bearright.image.get_size())
 
+#################               NEW                 ###########
 
+#oude bear
 def BearRight (x,y):
     screen.blit(bearright,(x,y))
 
@@ -185,19 +188,25 @@ def spawn_berries():
 
 #gameloop
 def Gameloop():
-     bearx = 90
-     beary = 370
-     bearx_change = 0
-     beary_change = 0
-     allSprites      = pygame.sprite.Group.add(bearright)
-     Running = True
-     while Running:
+
+    """oude beer
+     bearx          = 90
+     beary           = 370
+     bearx_change    = 0
+     beary_change    = 0"""
+     ########                         NEW!!!!!!!!!  nieuwe beer
+allSprites      = pygame.sprite.Group.add(bearright)
+     ######################################################
+Running = True
+    while Running:
             clock.tick(60)
             screen.blit (BG,(0,0))
             spawn_berries()
+            #event handling
             for event in pygame.event.get():
                if event.type == pygame.QUIT:
                   Running = False
+                  #bear oud
                if event.type == pygame.KEYDOWN:
                    if event.key == pygame.K_LEFT:
                        
@@ -216,12 +225,15 @@ def Gameloop():
                       bearx_change = 0
                       beary_change = 0
          
+                      #bear oud
             bearx += bearx_change
             beary += beary_change
             
+            ####################         NEW!!!!! ###########draw new bear
             allSprites.draw(screen)
             
-            BearRight(bearx,beary)
+            #bear oud
+            #BearRight(bearx,beary)
             pygame.display.update()
             clock.tick(60)
 
