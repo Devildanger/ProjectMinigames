@@ -21,7 +21,8 @@ screen          = pygame.display.set_mode ((screenWidth,screenHeight))
 clock           = pygame.time.Clock()
 FPS             = 60
 
-bearx_change,beary_change = 0,0
+bearx_change    = 0
+beary_change    = 0
 
 #Images
 BG              = pygame.image.load("data/backgrounds/Minigame 3 Loek/Background3.png")
@@ -59,7 +60,7 @@ class Bear(pygame.sprite.Sprite):
 
         
 
-#Berries
+#BerrySprite
 class Berry(pygame.sprite.Sprite):
     def __init__(self,width,height,x,y):
         super().__init__()
@@ -76,7 +77,7 @@ class Berry(pygame.sprite.Sprite):
 
 
 
-#Spawn de berries
+#Locaties van de berries
 class BerrySpawn:
     def __init__(self):
         self.image          = pygame.image.load("data/sprites/Minigame 3 Loek/berry.jpg")
@@ -210,7 +211,7 @@ class BerrySpawn:
             Berry(self,24,25,945,685))
 
     
-
+    #spawnen van berries
     def update(self):
 
         screen.blit (screen, (self.x, self.y))
