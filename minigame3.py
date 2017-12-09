@@ -46,7 +46,7 @@ class Bear(pygame.sprite.Sprite):
     BearspeedX = 5
     BearspeedY = 5
     def __init__(self,width,height,x,y):
-        super().__init__()
+        
         self.x          = x
         self.y          = y
         self.width      = 75
@@ -62,15 +62,12 @@ class Bear(pygame.sprite.Sprite):
 
 #BerrySprite
 class Berry(pygame.sprite.Sprite):
-    def __init__(self,width,height,x,y):
-        super().__init__()
+    def __init__(self,width,height,x,y):   
         self.x              = x
         self.y              = y
         self.width          = 24
         self.height         = 25
-        self.image          = pygame.Surface((self.width,self.height))
-        self.berry          = pygame.image.load("data/sprites/Minigame 3 Loek/berry.jpg")
-        self.rect           = self.image.get_rect()
+        
         
 
 
@@ -80,141 +77,145 @@ class Berry(pygame.sprite.Sprite):
 #Locaties van de berries
 class BerrySpawn:
     def __init__(self):
-        self.image          = pygame.image.load("data/sprites/Minigame 3 Loek/berry.jpg")
-        self.BerrySpawn          = (\
-            Berry(self,24,25,55,55),\
-            Berry(self,24,25,55,95),\
-            Berry(self,24,25,55,140),\
-            Berry(self,24,25,55,185),\
-            Berry(self,24,25,55,235),\
-            Berry(self,24,25,55,505),\
-            Berry(self,24,25,55,560),\
-            Berry(self,24,25,55,635),\
-            Berry(self,24,25,55,685),\
-            Berry(self,24,25,120,55),\
-            Berry(self,24,25,120,140),\
-            Berry(self,24,25,120,235),\
-            Berry(self,24,25,120,505),\
-            Berry(self,24,25,120,560),\
-            Berry(self,24,25,120,620),\
-            Berry(self,24,25,120,685),\
-            Berry(self,24,25,200,370),\
-            Berry(self,24,25,200,300),\
-            Berry(self,24,25,200,240),\
-            Berry(self,24,25,200,185),\
-            Berry(self,24,25,200,55),\
-            Berry(self,24,25,200,420),\
-            Berry(self,24,25,200,470),\
-            Berry(self,24,25,200,510),\
-            Berry(self,24,25,200,565),\
-            Berry(self,24,25,200,620),\
-            Berry(self,24,25,200,685),\
-            Berry(self,24,25,275,305),\
-            Berry(self,24,25,275,365),\
-            Berry(self,24,25,275,430),\
-            Berry(self,24,25,275,500),\
-            Berry(self,24,25,275,565),\
-            Berry(self,24,25,275,620),\
-            Berry(self,24,25,275,695),\
-            Berry(self,24,25,305,55),\
-            Berry(self,24,25,305,115),\
-            Berry(self,24,25,305,185),\
-            Berry(self,24,25,305,235),\
-            Berry(self,24,25,370,55),\
-            Berry(self,24,25,370,185),\
-            Berry(self,24,25,370,240),\
-            Berry(self,24,25,370,305),\
-            Berry(self,24,25,370,365),\
-            Berry(self,24,25,370,430),\
-            Berry(self,24,25,370,505),\
-            Berry(self,24,25,370,565),\
-            Berry(self,24,25,370,620),\
-            Berry(self,24,25,370,685),\
-            Berry(self,24,25,445,55),\
-            Berry(self,24,25,445,115),\
-            Berry(self,24,25,445,185),\
-            Berry(self,24,25,445,235),\
-            Berry(self,24,25,445,300),\
-            Berry(self,24,25,445,370),\
-            Berry(self,24,25,445,430),\
-            Berry(self,24,25,445,500),\
-            Berry(self,24,25,445,560),\
-            Berry(self,24,25,445,620),\
-            Berry(self,24,25,445,685),\
-            Berry(self,24,25,520,55),\
-            Berry(self,24,25,520,115),\
-            Berry(self,24,25,520,185),\
-            Berry(self,24,25,520,235),\
-            Berry(self,24,25,520,300),\
-            Berry(self,24,25,520,370),\
-            Berry(self,24,25,520,430),\
-            Berry(self,24,25,520,500),\
-            Berry(self,24,25,520,560),\
-            Berry(self,24,25,520,620),\
-            Berry(self,24,25,520,685),\
-            Berry(self,24,25,595,55),\
-            Berry(self,24,25,595,115),\
-            Berry(self,24,25,595,185),\
-            Berry(self,24,25,595,235),\
-            Berry(self,24,25,595,300),\
-            Berry(self,24,25,595,430),\
-            Berry(self,24,25,595,500),\
-            Berry(self,24,25,595,560),\
-            Berry(self,24,25,595,620),\
-            Berry(self,24,25,595,685),\
-            Berry(self,24,25,670,55),\
-            Berry(self,24,25,670,115),\
-            Berry(self,24,25,670,185),\
-            Berry(self,24,25,670,235),\
-            Berry(self,24,25,670,300),\
-            Berry(self,24,25,670,430),\
-            Berry(self,24,25,670,500),\
-            Berry(self,24,25,670,560),\
-            Berry(self,24,25,670,620),\
-            Berry(self,24,25,670,685),\
-            Berry(self,24,25,730,305),\
-            Berry(self,24,25,730,365),\
-            Berry(self,24,25,730,430),\
-            Berry(self,24,25,730,620),\
-            Berry(self,24,25,745,55),\
-            Berry(self,24,25,745,115),\
-            Berry(self,24,25,745,185),\
-            Berry(self,24,25,745,500),\
-            Berry(self,24,25,745,560),\
-            Berry(self,24,25,745,685),\
-            Berry(self,24,25,785,370),\
-            Berry(self,24,25,785,300),\
-            Berry(self,24,25,785,240),\
-            Berry(self,24,25,785,185),\
-            Berry(self,24,25,785,55),\
-            Berry(self,24,25,785,420),\
-            Berry(self,24,25,785,470),\
-            Berry(self,24,25,785,510),\
-            Berry(self,24,25,785,565),\
-            Berry(self,24,25,785,620),\
-            Berry(self,24,25,785,685),\
-            Berry(self,24,25,875,55),\
-            Berry(self,24,25,875,140),\
-            Berry(self,24,25,875,235),\
-            Berry(self,24,25,875,505),\
-            Berry(self,24,25,875,560),\
-            Berry(self,24,25,875,620),\
-            Berry(self,24,25,875,685),\
-            Berry(self,24,25,945,55),\
-            Berry(self,24,25,945,95),\
-            Berry(self,24,25,945,140),\
-            Berry(self,24,25,945,185),\
-            Berry(self,24,25,945,235),\
-            Berry(self,24,25,945,505),\
-            Berry(self,24,25,945,560),\
-            Berry(self,24,25,945,635),\
-            Berry(self,24,25,945,685))
+        self.width          = 24
+        self.height         = 25
+        self.image          = pygame.Surface((self.width,self.height))
+        self.berry          = pygame.image.load("data/sprites/Minigame 3 Loek/berry.jpg")
+        self.rect           = self.image.get_rect()
+        self.berryspawn                    = (\
+            Berry(24,25,55,55),\
+            Berry(24,25,55,95),\
+            Berry(24,25,55,140),\
+            Berry(24,25,55,185),\
+            Berry(24,25,55,235),\
+            Berry(24,25,55,505),\
+            Berry(24,25,55,560),\
+            Berry(24,25,55,635),\
+            Berry(24,25,55,685),\
+            Berry(24,25,120,55),\
+            Berry(24,25,120,140),\
+            Berry(24,25,120,235),\
+            Berry(24,25,120,505),\
+            Berry(24,25,120,560),\
+            Berry(24,25,120,620),\
+            Berry(24,25,120,685),\
+            Berry(24,25,200,370),\
+            Berry(24,25,200,300),\
+            Berry(24,25,200,240),\
+            Berry(24,25,200,185),\
+            Berry(24,25,200,55),\
+            Berry(24,25,200,420),\
+            Berry(24,25,200,470),\
+            Berry(24,25,200,510),\
+            Berry(24,25,200,565),\
+            Berry(24,25,200,620),\
+            Berry(24,25,200,685),\
+            Berry(24,25,275,305),\
+            Berry(24,25,275,365),\
+            Berry(24,25,275,430),\
+            Berry(24,25,275,500),\
+            Berry(24,25,275,565),\
+            Berry(24,25,275,620),\
+            Berry(24,25,275,695),\
+            Berry(24,25,305,55),\
+            Berry(24,25,305,115),\
+            Berry(24,25,305,185),\
+            Berry(24,25,305,235),\
+            Berry(24,25,370,55),\
+            Berry(24,25,370,185),\
+            Berry(24,25,370,240),\
+            Berry(24,25,370,305),\
+            Berry(24,25,370,365),\
+            Berry(24,25,370,430),\
+            Berry(24,25,370,505),\
+            Berry(24,25,370,565),\
+            Berry(24,25,370,620),\
+            Berry(24,25,370,685),\
+            Berry(24,25,445,55),\
+            Berry(24,25,445,115),\
+            Berry(24,25,445,185),\
+            Berry(24,25,445,235),\
+            Berry(24,25,445,300),\
+            Berry(24,25,445,370),\
+            Berry(24,25,445,430),\
+            Berry(24,25,445,500),\
+            Berry(24,25,445,560),\
+            Berry(24,25,445,620),\
+            Berry(24,25,445,685),\
+            Berry(24,25,520,55),\
+            Berry(24,25,520,115),\
+            Berry(24,25,520,185),\
+            Berry(24,25,520,235),\
+            Berry(24,25,520,300),\
+            Berry(24,25,520,370),\
+            Berry(24,25,520,430),\
+            Berry(24,25,520,500),\
+            Berry(24,25,520,560),\
+            Berry(24,25,520,620),\
+            Berry(24,25,520,685),\
+            Berry(24,25,595,55),\
+            Berry(24,25,595,115),\
+            Berry(24,25,595,185),\
+            Berry(24,25,595,235),\
+            Berry(24,25,595,300),\
+            Berry(24,25,595,430),\
+            Berry(24,25,595,500),\
+            Berry(24,25,595,560),\
+            Berry(24,25,595,620),\
+            Berry(24,25,595,685),\
+            Berry(24,25,670,55),\
+            Berry(24,25,670,115),\
+            Berry(24,25,670,185),\
+            Berry(24,25,670,235),\
+            Berry(24,25,670,300),\
+            Berry(24,25,670,430),\
+            Berry(24,25,670,500),\
+            Berry(24,25,670,560),\
+            Berry(24,25,670,620),\
+            Berry(24,25,670,685),\
+            Berry(24,25,730,305),\
+            Berry(24,25,730,365),\
+            Berry(24,25,730,430),\
+            Berry(24,25,730,620),\
+            Berry(24,25,745,55),\
+            Berry(24,25,745,115),\
+            Berry(24,25,745,185),\
+            Berry(24,25,745,500),\
+            Berry(24,25,745,560),\
+            Berry(24,25,745,685),\
+            Berry(24,25,785,370),\
+            Berry(24,25,785,300),\
+            Berry(24,25,785,240),\
+            Berry(24,25,785,185),\
+            Berry(24,25,785,55),\
+            Berry(24,25,785,420),\
+            Berry(24,25,785,470),\
+            Berry(24,25,785,510),\
+            Berry(24,25,785,565),\
+            Berry(24,25,785,620),\
+            Berry(24,25,785,685),\
+            Berry(24,25,875,55),\
+            Berry(24,25,875,140),\
+            Berry(24,25,875,235),\
+            Berry(24,25,875,505),\
+            Berry(24,25,875,560),\
+            Berry(24,25,875,620),\
+            Berry(24,25,875,685),\
+            Berry(24,25,945,55),\
+            Berry(24,25,945,95),\
+            Berry(24,25,945,140),\
+            Berry(24,25,945,185),\
+            Berry(24,25,945,235),\
+            Berry(24,25,945,505),\
+            Berry(24,25,945,560),\
+            Berry(24,25,945,635),\
+            Berry(24,25,945,685))
 
     
     #spawnen van berries
-    def update(self):
+   
 
-        screen.blit (screen, (self.x, self.y))
+        screen.blit (self.image, self.berryspawn)
 
 """
 def spawn_berries():
@@ -381,7 +382,7 @@ while Running:
             for event in pygame.event.get():
                if event.type == pygame.QUIT:
                   Running = False
-                  #bear oud
+                  
                if event.type == pygame.KEYDOWN:
                    if event.key == pygame.K_LEFT:
                        
@@ -407,8 +408,7 @@ while Running:
             
             
             
-            #bear oud
-            #BearRight(bearx,beary)
+
             pygame.display.update()
             clock.tick(60)
 
