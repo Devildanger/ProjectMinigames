@@ -82,7 +82,7 @@ class BerrySpawn:
         self.image          = pygame.Surface((self.width,self.height))
         self.berry          = pygame.image.load("data/sprites/Minigame 3 Loek/berry.jpg")
         self.rect           = self.image.get_rect()
-        self.berryspawn                    = (\
+        self.berryspawn     = (\
             Berry(24,25,55,55),\
             Berry(24,25,55,95),\
             Berry(24,25,55,140),\
